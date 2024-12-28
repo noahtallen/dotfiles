@@ -1,11 +1,14 @@
 [user]
 	name = Noah Allen
 	email = noahtallen@gmail.com
-	signingkey = EA48020173549A2A
 
 # Automattic GitHub repos
 [includeIf "hasconfig:remote.*.url:git@github.com:webflow/**"]
     path = ~/.gitconfig-webflow
+
+[include]
+    # Store local-only stuff here, like the signingkey
+    path = ~/.gitconfig-local
 
 [pull]
 	ff = only
