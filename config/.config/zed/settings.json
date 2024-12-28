@@ -14,5 +14,6 @@
     "mode": "system",
     "light": "One Light",
     "dark": "Github Dark"
-  }
+  },
+  "soft_wrap": "editor_width"
 }
