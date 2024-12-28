@@ -1,4 +1,4 @@
-# Noah's Dotfiles
+# Dotfiles
 
 This repo stores my dotfiles using GNU stow. Link with a new machine by runing `./setup.sh`.
 
