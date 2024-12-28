@@ -3,6 +3,10 @@ set -euo pipefail
 
 # TODO:
 # - Mac settings
+#  - Always show hidden files
+#  - Three-finger drag
+#  - Ctrl-command to move window from anywhere
+#  - Default applications??
 
 if ! type brew > /dev/null ; then
     echo "Installing brew..."
