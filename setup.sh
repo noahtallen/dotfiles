@@ -17,12 +17,11 @@ echo "Install missing brew programs"
 brew bundle install
 
 # Link configurations:
-stow config --target="$HOME"
 stow shell --target="$HOME"
 stow git --target="$HOME"
 stow ssh --target="$HOME"
-stow fonts --target="$HOME"
 stow gnupg --target="$HOME"
+stow config --target="$HOME"
 
 # OMZ:
 if ! [ -d ~/.oh-my-zsh ]; then
@@ -34,3 +33,6 @@ if ! [ -d ~/.oh-my-zsh ]; then
 else
     echo "OMZ already installed."
 fi
+
+# Add fonts -- symlinks don't work for this
+cp -rf ./fonts/ ~/Library/Fonts/
