@@ -1,6 +1,6 @@
 # Noah's Dotfiles
 
-This repo stores my dotfiles using GNU stow.
+This repo stores my dotfiles using GNU stow. Link with a new machine by runing `./setup.sh`.
 
 ## Adding things to the repo
 1. Make a top-level directory in this repo for the new entry, and then subdirectories that match the system location from $HOME.
