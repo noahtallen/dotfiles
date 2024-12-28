@@ -1,0 +1,41 @@
+# Load the script addon:
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+yabai -m config layout                       bsp
+yabai -m config top_padding                  2
+yabai -m config bottom_padding               2
+yabai -m config left_padding                 2
+yabai -m config right_padding                2
+yabai -m config window_gap                   5
+
+yabai -m config mouse_follows_focus          on
+yabai -m config focus_follows_mouse          autofocus
+
+# set mouse interaction modifier key (default: fn)
+yabai -m config mouse_modifier cmd
+# set modifier + left-click drag to move window (default: move)
+yabai -m config mouse_action1 move
+# set modifier + right-click drag to resize window (default: resize)
+yabai -m config mouse_action2 resize
+
+# Unmanage apps (e.g. floating mode)
+floating_apps="^(Fantastical Helper|System Preferences|Spotify|1Password|Messages|Telegram|LaunchBar|Pop)$"
+yabai -m rule --add app="${floating_apps}" manage=off
+
+# This script handles popup windows correctly.
+# NOTE: does not work.
+# yabai -m signal --add event=window_created app="${apps}" action="$HOME/.config/yabai/floating-popups.sh"
+
+# Requirements for Yabai Indicator:
+# See https://github.com/xiamaz/YabaiIndicator
+yabai -m signal --add event=mission_control_exit action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_added action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=display_removed action='echo "refresh" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_created action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_destroyed action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_focused action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_moved action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_resized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_minimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'
+yabai -m signal --add event=window_deminimized action='echo "refresh windows" | nc -U /tmp/yabai-indicator.socket'

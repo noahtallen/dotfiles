@@ -1,0 +1,54 @@
+ctrl + shift - g : open /Applications/Firefox.app
+ctrl + shift - d : open /Applications/Visual\ Studio\ Code.app
+ctrl + shift - b : open /Applications/Slack.app
+# ctrl + shift - p : open /Applications/Shottr.app
+# ctrl + shift - t : open /Applications/Shottr.app
+
+# Note: - p takes a full display screenshot with Shottr
+# Note: - t takes a window screenshot with Shottr
+ctrl + shift - s : open /Applications/Obsidian.app
+
+
+##### Yabai stuff -- not currently used. #####
+## Restart yabai (to reload configuration):
+#ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+
+## Focus window:z
+#ctrl + shift - n : yabai -m window --focus west
+#ctrl + shift - u : yabai -m window --focus north
+#ctrl + shift - e : yabai -m window --focus south
+#ctrl + shift - i : yabai -m window --focus east
+
+## Move window:
+#cmd + shift - n : yabai -m window --swap west
+#cmd + shift - u : yabai -m window --swap north
+#cmd + shift - e : yabai -m window --swap south
+#cmd + shift - i : yabai -m window --swap east
+
+#ctrl + shift - f : yabai -m window --toggle float
+
+## Create new space:
+#ctrl + shift - o : yabai -m space --create
+#ctrl + shift - o : yabai -m space --create
+#ctrl + shift - d : yabai -m space --destroy
+
+# Focus spaces, creating if not exists:
+#cmd - 1 : yabai -m space --focus 1
+#cmd - 2 : yabai -m space --focus 2
+#cmd - 3 : yabai -m space --focus 3
+#cmd - 4 : yabai -m space --focus 4
+#cmd - 5 : yabai -m space --focus 5
+
+## Toggle between recently used spaces with spacebar:
+#ctrl + shift - 0x31 : yabai -m space --focus recent
+## Loop through all spaces with backspace:
+#ctrl + shift - 0x33 : yabai -m space --focus next || yabai -m space --focus first
+## Make all windows the same size.
+#ctrl + shift - b : yabai -m space --balance
+
+## Move window to space:
+#ctrl + shift - 1 : yabai -m window --space 1 && yabai -m space --focus 1
+#ctrl + shift - 2 : yabai -m window --space 2 && yabai -m space --focus 2
+#ctrl + shift - 3 : yabai -m window --space 3 && yabai -m space --focus 3
+#ctrl + shift - 4 : yabai -m window --space 4 && yabai -m space --focus 4
+#ctrl + shift - 5 : yabai -m window --space 5 && yabai -m space --focus 5

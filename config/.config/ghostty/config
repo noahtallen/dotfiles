@@ -1,0 +1,13 @@
+font-family = Cascadia Code NF
+font-size = 16
+theme = custom_kitty
+adjust-cursor-thickness = 200%
+
+# Background Blur:
+background-opacity = 0.9
+background-blur-radius = 20
+
+# Adds some padding:
+window-padding-balance = true
+window-padding-x = 8
+window-padding-y = 8

@@ -1,0 +1,31 @@
+{
+  "title": "hold z mapped to ctrl-shift",
+  "rules": [
+    {
+      "description": "Normal press sends z, holding sends ctrl-shfit",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "optional": ["any"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_shift",
+              "modifiers": ["left_control"]
+            }
+          ],
+          "to_if_alone": [
+            {
+              "hold_down_milliseconds": 50,
+              "key_code": "z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
