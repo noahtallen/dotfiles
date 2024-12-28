@@ -1,3 +1,6 @@
+# This was originally GitHub dark in Kitty, but it looks a lot different from the one
+# that ships with Ghostty, and I'm not sure if I customized it.
+
 # black
 palette = 0=#484f58
 palette = 8=#6e7681

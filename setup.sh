@@ -16,7 +16,7 @@ echo
 echo "Install missing brew programs"
 brew bundle install
 
-# Add configurations:
+# Link configurations:
 stow config --target="$HOME"
 stow shell --target="$HOME"
 stow git --target="$HOME"
