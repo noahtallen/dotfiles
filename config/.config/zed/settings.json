@@ -9,11 +9,14 @@
 {
   "buffer_font_family": "Cascadia Code NF",
   "ui_font_size": 16,
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "theme": {
     "mode": "system",
     "light": "One Light",
     "dark": "Github Dark"
   },
-  "soft_wrap": "editor_width"
+  "soft_wrap": "editor_width",
+  "buffer_font_features": {
+    "calt": false
+  }
 }
