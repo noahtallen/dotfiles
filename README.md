@@ -14,6 +14,6 @@ Only add the specific files you need! For example, you can include `.gitconfig` 
 File organization is up to you. `stow` simply takes an input directory and a target directory, and symlinks everything in the input to the same location (e.g. same as the input directory tree) in the target directory. So if you make `./foo/.config/test/xyz/thing.json` and run `stow foo --target=$HOME`, then `thing.json` will get symlinked to `~/.config/test/xyz/thing.json`, and updates in to the file from either place will always stay in sync. Then you can simply use git to push/pull to update with other machines.
 
 ## Update brew programs:
-* Update the list of programs you have installed by running `brew bundle dump` in this directory.
+* Update the list of programs you have installed by running `brew bundle dump` in this directory. It's worth removing some of the entries you might not want installed on all your computers.
 * To check if you have all programs installed, run `brew bundle check`.
 * To install missing programs, run `brew bundle install`
