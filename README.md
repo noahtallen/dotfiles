@@ -17,3 +17,13 @@ File organization is up to you. `stow` simply takes an input directory and a tar
 * Update the list of programs you have installed by running `brew bundle dump` in this directory. It's worth removing some of the entries you might not want installed on all your computers.
 * To check if you have all programs installed, run `brew bundle check`.
 * To install missing programs, run `brew bundle install`
+
+## TODO:
+
+- [ ] Mac settings:
+  * [ ] Always show hidden files
+  * [ ] Three-finger drag
+  * [ ] Ctrl-command to move window from anywhere
+  * [ ] Default applications??
+- [ ] Mac vs Linux options
+- [ ] Other programs and keyboard shortcuts (e.g. Shottr replacing native screenshot shortcut)
