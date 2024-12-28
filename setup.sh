@@ -16,3 +16,4 @@ git clone https://github.com/Aloxaf/fzf-tab ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/p
 
 stow config --target="$HOME"
 stow shell --target="$HOME"
+stow git --target="$HOME"

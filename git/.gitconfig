@@ -1,0 +1,44 @@
+[user]
+	name = Noah Allen
+	email = noahtallen@gmail.com
+	signingkey = EA48020173549A2A
+
+# Automattic GitHub repos
+[includeIf "hasconfig:remote.*.url:git@github.com:webflow/**"]
+    path = ~/.gitconfig-webflow
+
+[pull]
+	ff = only
+
+[alias]
+	pushf = push --force-with-lease
+	ca = commit -a -m
+	bn = rev-parse --abbrev-ref HEAD
+	b = !git checkout -b $1 && git push -u origin
+	l = log --oneline
+	co = checkout
+	# ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
+	branches = "!r() { count=$1; git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:=10} | column -ts'|';}; r"
+
+[init]
+	defaultBranch = trunk
+
+[rerere]
+    enabled = true
+
+[diff]
+    tool = difftastic
+	external = difft
+
+[difftool]
+    prompt = false
+
+[difftool "difftastic"]
+    cmd = difft "$LOCAL" "$REMOTE"
+
+[pager]
+    difftool = true
+[core]
+	hooksPath = /Users/noahallen/Library/Application Support/ggshield/git-hooks
+[commit]
+	gpgsign = true
