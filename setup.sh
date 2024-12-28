@@ -16,6 +16,7 @@ stow config --target="$HOME"
 stow shell --target="$HOME"
 stow git --target="$HOME"
 stow ssh --target="$HOME"
+stow fonts --target="$HOME"
 
 # OMZ:
 if ! [ -d ~/.oh-my-zsh ]; then
