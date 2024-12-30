@@ -18,6 +18,8 @@ stow ssh --target="$HOME"
 stow gnupg --target="$HOME"
 stow config --target="$HOME"
 
+fish ./fish-setup.fish
+
 echo -e "\nChecking OMZ..."
 if ! [ -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc

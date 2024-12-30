@@ -1,40 +1,38 @@
+# Environment
 export AWS_PROFILE="dev-publish-only"
 export AWS_DEFAULT_REGION="us-east-1"
-export AWS_REGION="${AWS_DEFAULT_REGION}"
+export AWS_REGION="$AWS_DEFAULT_REGION"
 export AWS_SDK_LOAD_CONFIG=1
-
-# fnm (faster nvm)
-eval "$(fnm env --use-on-cd)"
-
-# autocorrect commands:
-eval $(thefuck --alias)
-
-# GPG Agent
-export GPG_TTY=$(tty)
-gpgconf --launch gpg-agent
-
 export NODE_OPTIONS=--max-old-space-size=24576
 
+# Add Brew env:
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# GPG Agent (Severe performance penalty in Fish, need to rethink.)
+# export GPG_TTY=$(tty)
+# gpgconf --launch gpg-agent
+
+# MacOS
 alias dnsreset="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
+# Commands
+alias ls="eza --icons -a"
+alias pf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+alias lg='lazygit'
+alias p='pnpm'
+alias cat='bat'
+
+# Git
 alias prc="git push -u origin HEAD && gh pr create --web"
 alias repo="gh repo view --web"
-
-alias ydup="yarn && npx yarn-deduplicate && yarn"
-
-alias ls="eza --icons -a"
-alias cd="z"
-
 alias rbt="git checkout trunk && git pull && git checkout - && git rebase trunk"
-
-alias npmscripts="cat package.json | jq .scripts"
-
 alias gcl='git reset . && git checkout -- . && git clean -fd .'
-alias dad_joke='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
-alias dadj='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
 
+# Other development
+alias ydup="yarn && npx yarn-deduplicate && yarn"
+alias npmscripts="cat package.json | jq .scripts"
 alias dcm="docker-compose"
 
-alias pf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
-
-alias lg='lazygit'
+# Random
+alias dad_joke='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
+alias dadj='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'

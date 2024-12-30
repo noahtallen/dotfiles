@@ -78,6 +78,13 @@ zstyle ':omz:plugins:nvm' lazy yes
 source $ZSH/oh-my-zsh.sh
 fpath+="/opt/homebrew/share/zsh/site-functions"
 
+# fnm (faster nvm)
+export FNM_COREPACK_ENABLED=true
+eval "$(fnm env --use-on-cd)"
+
+# autocorrect commands:
+eval $(thefuck --alias)
+
 # Pure Prompt for zsh:
 PURE_PROMPT_SYMBOL="$"
 autoload -U promptinit; promptinit
@@ -103,5 +110,5 @@ _fzf_comprun() {
 
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
-
+alias cd="z"
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
