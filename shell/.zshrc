@@ -78,8 +78,10 @@ zstyle ':omz:plugins:nvm' lazy yes
 source $ZSH/oh-my-zsh.sh
 fpath+="/opt/homebrew/share/zsh/site-functions"
 
+# Shared aliases and path options
+source "$HOME/.shared_env"
+
 # fnm (faster nvm)
-export FNM_COREPACK_ENABLED=true
 eval "$(fnm env --use-on-cd)"
 
 # autocorrect commands:
@@ -90,9 +92,6 @@ PURE_PROMPT_SYMBOL="$"
 autoload -U promptinit; promptinit
 zstyle :prompt:pure:git:stash show yes
 prompt pure
-
-# Shared aliases and path options
-source "$HOME/.shared_env"
 
 # Various CLI tools that need initialization & zsh integration
 export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute-silent(echo -n {1..} | pbcopy)+abort'"

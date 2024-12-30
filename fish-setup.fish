@@ -11,10 +11,9 @@ if ! type -q fisher
 end
 
 # Add plugins
-fisher install jorgebucaran/nvm.fish
 fisher install patrickf1/fzf.fish
-fisher install kidonng/zoxide.fish
-fisher install ilancosman/tide
+fisher install icezyclon/zoxide.fish
+fisher install ilancosman/tide@v6
 
 # Tide Prompt configuration
 tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Compact --icons='Few icons' --transient=No

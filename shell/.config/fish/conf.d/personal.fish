@@ -4,6 +4,9 @@ source "$HOME/.shared_env"
 # Replace cd with zoxide:
 set -U zoxide_cmd cd
 
+# Make fnm work:
+status is-interactive && fnm env --use-on-cd --shell fish | source
+
 # Things I did to the tide prompt:
 # tide configure --auto --style=Lean --prompt_colors='True color' --show_time='24-hour format' --lean_prompt_height='Two lines' --prompt_connection=Disconnected --prompt_spacing=Compact --icons='Few icons' --transient=No
 # set -U tide_character_icon '$'

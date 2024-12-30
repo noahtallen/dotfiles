@@ -4,6 +4,7 @@ export AWS_DEFAULT_REGION="us-east-1"
 export AWS_REGION="$AWS_DEFAULT_REGION"
 export AWS_SDK_LOAD_CONFIG=1
 export NODE_OPTIONS=--max-old-space-size=24576
+export FNM_COREPACK_ENABLED=true
 
 # Add Brew env:
 eval "$(/opt/homebrew/bin/brew shellenv)"
