@@ -12,12 +12,14 @@ echo -e "\nChecking brew programs"
 brew bundle install
 
 # symlink configurations: (fails if there are existing files, but if you do stow --adopt, it will link with the existing contents, letting you see the differences via git.)
+echo -e "\Symlinking configs..."
 stow shell --target="$HOME"
 stow git --target="$HOME"
 stow ssh --target="$HOME"
 stow gnupg --target="$HOME"
 stow config --target="$HOME"
 
+echo -e "\n Installing fish..."
 fish ./fish-setup.fish
 
 echo -e "\nChecking OMZ..."

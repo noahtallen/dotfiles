@@ -3,12 +3,15 @@
 # Set default shell:
 if ! cat /etc/shells | grep fish
     echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+    chsh -s /opt/homebrew/bin/fish
+    echo "Fish has been set as the default shell. Open a new shell (which should now be fish), and run ./setup.sh again to continue."
 end
 
 # Add plugin manager:
 if ! type -q fisher
     fish -c "curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher"
 end
+
 
 # Add plugins
 fisher install patrickf1/fzf.fish
