@@ -1,0 +1,57 @@
+{
+  "title": "Change keyboard layout to Colemak based on external keyboard.",
+  "rules": [
+    {
+      "manipulators": [
+        {
+          "conditions": [
+            {
+              "input_sources": [
+                { "input_source_id": "com.apple.keylayout.US" }
+              ],
+              "type": "input_source_unless"
+            },
+            {
+              "identifiers": [{ "product_id": 18806 }],
+              "type": "device_if"
+            }
+          ],
+          "from": { "any": "key_code" },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.US",
+                "language": "en"
+              }
+            }
+          ],
+          "type": "basic"
+        },
+        {
+          "conditions": [
+            {
+              "input_sources": [
+                { "input_source_id": "com.apple.keylayout.Colemak" }
+              ],
+              "type": "input_source_unless"
+            },
+            {
+              "identifiers": [{ "product_id": 18806 }],
+              "type": "device_unless"
+            }
+          ],
+          "from": { "any": "key_code" },
+          "to": [
+            {
+              "select_input_source": {
+                "input_source_id": "com.apple.keylayout.Colemak",
+                "language": "en"
+              }
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
