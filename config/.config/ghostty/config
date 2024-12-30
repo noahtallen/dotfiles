@@ -5,7 +5,7 @@ adjust-cursor-thickness = 200%
 
 # Background Blur:
 background-opacity = 0.9
-background-blur-radius = 40
+background-blur-radius = 30
 
 # Adds some padding:
 window-padding-balance = true
