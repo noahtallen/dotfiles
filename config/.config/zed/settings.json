@@ -18,5 +18,8 @@
   "soft_wrap": "editor_width",
   "buffer_font_features": {
     "calt": false
+  },
+  "file_types": {
+    "Shell Script": [".shared_env", "*.conf", "*rc", "config"]
   }
 }
