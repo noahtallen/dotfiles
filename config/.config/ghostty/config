@@ -1,6 +1,6 @@
 font-family = Cascadia Code NF
 font-size = 16
-theme = custom_kitty
+theme = custom_kitty.config
 adjust-cursor-thickness = 200%
 
 # Background Blur:
