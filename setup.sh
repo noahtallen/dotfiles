@@ -19,7 +19,7 @@ stow ssh --target="$HOME"
 stow gnupg --target="$HOME"
 stow config --target="$HOME"
 
-echo -e "\n Installing fish..."
+echo -e "\nInstalling fish..."
 fish ./fish-setup.fish
 
 echo -e "\nChecking OMZ..."
@@ -44,8 +44,9 @@ cp -rf ./fonts/ ~/Library/Fonts/
 # use "defaults delete $domain $setting" to reset values. -g uses NSGlobalDomain for $domain
 # Only configure sometimes -- change the os_setting check when a new variable is added so that
 # configuration runs again on machines that don't have that variable.
-os_setting=$(defaults read com.apple.TimeMachine DoNotOfferNewDisksForBackup)
-if [ "$(uname)" == "Darwin" ] && [ "$os_setting" -ne 1 ]; then
+os_setting=$(defaults read com.apple.TimeMachine DoNotOfferNewDisksForBackup 2>/dev/null || true)
+if [ "$(uname)" == "Darwin" ] && [ "$os_setting" != 1 ]; then
+    echo -e "\nSetting macOS options..."
     # cmd-ctrl drag windows around:
     defaults write -g NSWindowShouldDragOnGesture -bool true
 
