@@ -12,7 +12,7 @@ echo -e "\nChecking brew programs"
 brew bundle install
 
 # symlink configurations: (fails if there are existing files, but if you do stow --adopt, it will link with the existing contents, letting you see the differences via git.)
-echo -e "\Symlinking configs..."
+echo -e "\nSymlinking configs..."
 stow shell --target="$HOME"
 stow git --target="$HOME"
 stow ssh --target="$HOME"
@@ -39,3 +39,41 @@ fi
 # Add fonts -- symlinks don't work for this
 echo -e "\nCopying fonts..."
 cp -rf ./fonts/ ~/Library/Fonts/
+
+# macOS options, see https://macos-defaults.com/
+# use "defaults delete $domain $setting" to reset values. -g uses NSGlobalDomain for $domain
+# Only configure sometimes -- change the os_setting check when a new variable is added so that
+# configuration runs again on machines that don't have that variable.
+os_setting=$(defaults read com.apple.TimeMachine DoNotOfferNewDisksForBackup)
+if [ "$(uname)" == "Darwin" ] && [ "$os_setting" -ne 1 ]; then
+    # cmd-ctrl drag windows around:
+    defaults write -g NSWindowShouldDragOnGesture -bool true
+
+    # Show hidden files and extensions in Finder:
+    defaults write com.apple.finder AppleShowAllFiles true
+    defaults write com.apple.finder ShowPathbar -bool true
+    defaults write com.apple.finder _FXSortFoldersFirst -bool true
+    defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+    defaults write -g AppleShowAllExtensions -bool true
+
+    # Add three-finger drag:
+    defaults write com.apple.AppleMultitouchTrackpad DragLock -bool false
+    defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
+    defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
+    # Faster animations across various things (these may no longer work):
+    defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+    defaults write -g QLPanelAnimationDuration -float 0.2
+    defaults write -g NSWindowResizeTime -float 0.001
+
+    # Dock animations:
+    defaults write com.apple.dock autohide -bool true
+    defaults write com.apple.dock autohide-delay -float 0
+    defaults write com.apple.dock autohide-time-modifier -float 0.5
+    defaults write com.apple.dock mineffect -string scale
+
+    defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+    killall Finder
+    killall Dock
+fi
