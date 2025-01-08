@@ -23,6 +23,7 @@ alias dnsreset="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 alias ls="eza --icons -a"
 alias pf="fzf --preview='less {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 alias lg='lazygit'
+alias ld='lazydocker'
 alias p='pnpm'
 alias cat='bat'
 
