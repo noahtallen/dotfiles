@@ -2,14 +2,6 @@
 	name = Noah Allen
 	email = noahtallen@gmail.com
 
-# Automattic GitHub repos
-[includeIf "hasconfig:remote.*.url:git@github.com:webflow/**"]
-    path = ~/.gitconfig-webflow
-
-[include]
-    # Store local-only stuff here, like the signingkey
-    path = ~/.gitconfig-local
-
 [pull]
 	ff = only
 
@@ -41,3 +33,16 @@
 
 [pager]
     difftool = true
+
+# For some reason, git config --global doesn't read this if it's in an included local config file,
+# so just include it here. Try not to commit it :P
+[core]
+	hooksPath = /Users/noahallen/Library/Application Support/ggshield/git-hooks
+
+# Work repos
+[includeIf "hasconfig:remote.*.url:git@github.com:webflow/**"]
+    path = ~/.gitconfig-webflow
+
+[include]
+# Store local-only stuff here, like the signingkey
+    path = ~/.gitconfig-local
