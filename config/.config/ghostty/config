@@ -1,11 +1,13 @@
 font-family = Cascadia Code NF
 font-size = 16
+# Kinda like line height:
+adjust-cell-height = 8
 theme = custom_kitty.config
 adjust-cursor-thickness = 200%
 
 # Background Blur:
-background-opacity = 0.9
-background-blur-radius = 30
+# background-opacity = 0.9
+# background-blur-radius = 30
 
 # Adds some padding:
 window-padding-balance = true
