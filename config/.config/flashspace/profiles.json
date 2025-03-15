@@ -1,0 +1,175 @@
+{
+  "profiles" : [
+    {
+      "id" : "212F0602-CC88-4987-9FEE-D1790AA2CCF8",
+      "name" : "Default",
+      "workspaces" : [
+        {
+          "id" : "543DDD3E-5A6F-4EB0-A6D1-903501F0DD26",
+          "shortcut" : {
+            "modifiers" : 1966080,
+            "keyCode" : 20
+          },
+          "name" : "coding",
+          "display" : "Built-in Retina Display",
+          "apps" : [
+            {
+              "name" : "Cursor",
+              "bundleIdentifier" : "com.todesktop.230313mzl4w4u92",
+              "iconPath" : "\/Applications\/Cursor.app\/Contents\/Resources\/icon.icns"
+            },
+            {
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "name" : "Ghostty",
+              "iconPath" : "\/Applications\/Ghostty.app\/Contents\/Resources\/AppIcon.icns"
+            },
+            {
+              "name" : "Zed Preview",
+              "bundleIdentifier" : "dev.zed.Zed-Preview",
+              "iconPath" : "\/Applications\/Zed Preview.app\/Contents\/Resources\/Zed Preview.icns"
+            },
+            {
+              "name" : "Zed",
+              "iconPath" : "\/Applications\/Zed.app\/Contents\/Resources\/Zed.icns",
+              "bundleIdentifier" : "dev.zed.Zed"
+            }
+          ]
+        },
+        {
+          "name" : "browsing",
+          "shortcut" : {
+            "keyCode" : 18,
+            "modifiers" : 1966080
+          },
+          "display" : "Built-in Retina Display",
+          "id" : "808C2FF8-A139-4078-AD0A-C84E6DAC4243",
+          "apps" : [
+            {
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "\/Applications\/Arc.app\/Contents\/Resources\/AppIcon.icns",
+              "name" : "Arc"
+            }
+          ]
+        },
+        {
+          "shortcut" : {
+            "keyCode" : 19,
+            "modifiers" : 1966080
+          },
+          "name" : "slack",
+          "display" : "Built-in Retina Display",
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+              "name" : "Slack",
+              "iconPath" : "\/Applications\/Slack.app\/Contents\/Resources\/electron.icns"
+            }
+          ],
+          "id" : "BCB3DFCE-A7D7-44A0-B12F-51C7F9F96289"
+        },
+        {
+          "apps" : [
+            {
+              "bundleIdentifier" : "md.obsidian",
+              "name" : "Obsidian",
+              "iconPath" : "\/Applications\/Obsidian.app\/Contents\/Resources\/icon.icns"
+            }
+          ],
+          "id" : "DD6F106D-6543-4B6E-A891-6E34DF8E5B87",
+          "display" : "Built-in Retina Display",
+          "name" : "notes",
+          "shortcut" : {
+            "modifiers" : 1966080,
+            "keyCode" : 21
+          }
+        }
+      ]
+    },
+    {
+      "name" : "Plugged In",
+      "workspaces" : [
+        {
+          "id" : "847B795E-AD91-4B15-8111-88ED70D5D796",
+          "shortcut" : {
+            "modifiers" : 1966080,
+            "keyCode" : 20
+          },
+          "display" : "AORUS FI32U",
+          "name" : "coding",
+          "apps" : [
+            {
+              "iconPath" : "\/Applications\/Cursor.app\/Contents\/Resources\/icon.icns",
+              "name" : "Cursor",
+              "bundleIdentifier" : "com.todesktop.230313mzl4w4u92"
+            },
+            {
+              "iconPath" : "\/Applications\/Ghostty.app\/Contents\/Resources\/AppIcon.icns",
+              "bundleIdentifier" : "com.mitchellh.ghostty",
+              "name" : "Ghostty"
+            },
+            {
+              "bundleIdentifier" : "dev.zed.Zed-Preview",
+              "iconPath" : "\/Applications\/Zed Preview.app\/Contents\/Resources\/Zed Preview.icns",
+              "name" : "Zed Preview"
+            },
+            {
+              "iconPath" : "\/Applications\/Zed.app\/Contents\/Resources\/Zed.icns",
+              "name" : "Zed",
+              "bundleIdentifier" : "dev.zed.Zed"
+            }
+          ]
+        },
+        {
+          "shortcut" : {
+            "modifiers" : 1966080,
+            "keyCode" : 18
+          },
+          "apps" : [
+            {
+              "name" : "Arc",
+              "bundleIdentifier" : "company.thebrowser.Browser",
+              "iconPath" : "\/Applications\/Arc.app\/Contents\/Resources\/AppIcon.icns"
+            }
+          ],
+          "id" : "36B651CB-75ED-4E41-8F9E-2DA4BE343AB5",
+          "display" : "AORUS FI32U",
+          "name" : "browsing"
+        },
+        {
+          "display" : "Built-in Retina Display",
+          "shortcut" : {
+            "keyCode" : 19,
+            "modifiers" : 1966080
+          },
+          "name" : "slack",
+          "id" : "F01CE120-4DFF-4FB5-AFDC-9AD82B53D494",
+          "apps" : [
+            {
+              "bundleIdentifier" : "com.tinyspeck.slackmacgap",
+              "iconPath" : "\/Applications\/Slack.app\/Contents\/Resources\/electron.icns",
+              "name" : "Slack"
+            }
+          ]
+        },
+        {
+          "apps" : [
+            {
+              "name" : "Obsidian",
+              "bundleIdentifier" : "md.obsidian",
+              "iconPath" : "\/Applications\/Obsidian.app\/Contents\/Resources\/icon.icns"
+            }
+          ],
+          "id" : "C67D712F-03F5-4019-97BE-991064606D3A",
+          "name" : "notes",
+          "display" : "LG HDR 4K",
+          "shortcut" : {
+            "modifiers" : 1966080,
+            "keyCode" : 21
+          }
+        }
+      ],
+      "id" : "A8A38369-DD18-48AE-B8AB-06516B043646"
+    }
+  ],
+  "selectedProfileId" : "A8A38369-DD18-48AE-B8AB-06516B043646"
+}

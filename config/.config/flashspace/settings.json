@@ -1,0 +1,76 @@
+{
+  "focusNextWorkspaceWindow" : {
+    "modifiers" : 1966080,
+    "keyCode" : 49
+  },
+  "focusUp" : {
+    "keyCode" : 126,
+    "modifiers" : 1966080
+  },
+  "showSpaceControl" : {
+    "keyCode" : 0,
+    "modifiers" : 1966080
+  },
+  "runScriptOnWorkspaceChange" : "",
+  "changeWorkspaceOnAppAssign" : true,
+  "runScriptOnProfileChange" : "",
+  "enableSpaceControlAnimations" : false,
+  "enablePictureInPictureSupport" : true,
+  "runScriptOnLaunch" : "",
+  "focusRight" : {
+    "keyCode" : 124,
+    "modifiers" : 1966080
+  },
+  "centerCursorOnWorkspaceChange" : false,
+  "switchToNextWorkspace" : {
+    "keyCode" : 17,
+    "modifiers" : 1966080
+  },
+  "switchToPreviousWorkspace" : {
+    "modifiers" : 1966080,
+    "keyCode" : 1
+  },
+  "spaceControlCurrentDisplayWorkspaces" : false,
+  "focusDown" : {
+    "modifiers" : 1966080,
+    "keyCode" : 125
+  },
+  "unfloatTheFocusedApp" : {
+    "keyCode" : 5,
+    "modifiers" : 1966080
+  },
+  "menuBarDisplayAliases" : "",
+  "showFloatingNotifications" : true,
+  "enableIntegrations" : false,
+  "floatingApps" : [
+    {
+      "name" : "Obsidian",
+      "bundleIdentifier" : "md.obsidian",
+      "iconPath" : "\/Applications\/Obsidian.app\/Contents\/Resources\/icon.icns"
+    },
+    {
+      "name" : "Ghostty",
+      "bundleIdentifier" : "com.mitchellh.ghostty",
+      "iconPath" : "\/Applications\/Ghostty.app\/Contents\/Resources\/AppIcon.icns"
+    },
+    {
+      "name" : "zoom.us",
+      "bundleIdentifier" : "us.zoom.xos",
+      "iconPath" : "\/Applications\/zoom.us.app\/Contents\/Resources\/ZPLogo.icns"
+    }
+  ],
+  "floatTheFocusedApp" : {
+    "keyCode" : 3,
+    "modifiers" : 1966080
+  },
+  "enableFocusManagement" : true,
+  "focusLeft" : {
+    "modifiers" : 1966080,
+    "keyCode" : 123
+  },
+  "centerCursorOnFocusChange" : false,
+  "enableSpaceControl" : true,
+  "showMenuBarTitle" : true,
+  "menuBarTitleTemplate" : "$WORKSPACE",
+  "checkForUpdatesAutomatically" : false
+}
