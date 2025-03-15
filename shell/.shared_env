@@ -43,3 +43,5 @@ alias dcm="docker-compose"
 # Random
 alias dad_joke='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
 alias dadj='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
+
+test -f ~/.local_env && source ~/.local_env
