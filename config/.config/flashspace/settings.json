@@ -1,76 +1,44 @@
 {
-  "focusNextWorkspaceWindow" : {
-    "modifiers" : 1966080,
-    "keyCode" : 49
-  },
-  "focusUp" : {
-    "keyCode" : 126,
-    "modifiers" : 1966080
-  },
-  "showSpaceControl" : {
-    "keyCode" : 0,
-    "modifiers" : 1966080
-  },
-  "runScriptOnWorkspaceChange" : "",
-  "changeWorkspaceOnAppAssign" : true,
-  "runScriptOnProfileChange" : "",
-  "enableSpaceControlAnimations" : false,
-  "enablePictureInPictureSupport" : true,
-  "runScriptOnLaunch" : "",
-  "focusRight" : {
-    "keyCode" : 124,
-    "modifiers" : 1966080
-  },
+  "centerCursorOnFocusChange" : false,
   "centerCursorOnWorkspaceChange" : false,
-  "switchToNextWorkspace" : {
-    "keyCode" : 17,
-    "modifiers" : 1966080
-  },
-  "switchToPreviousWorkspace" : {
-    "modifiers" : 1966080,
-    "keyCode" : 1
-  },
-  "spaceControlCurrentDisplayWorkspaces" : false,
-  "focusDown" : {
-    "modifiers" : 1966080,
-    "keyCode" : 125
-  },
-  "unfloatTheFocusedApp" : {
-    "keyCode" : 5,
-    "modifiers" : 1966080
-  },
-  "menuBarDisplayAliases" : "",
-  "showFloatingNotifications" : true,
+  "changeWorkspaceOnAppAssign" : true,
+  "checkForUpdatesAutomatically" : false,
+  "enableFocusManagement" : true,
   "enableIntegrations" : false,
+  "enablePictureInPictureSupport" : true,
+  "enableSpaceControl" : true,
+  "enableSpaceControlAnimations" : false,
+  "floatTheFocusedApp" : "cmd+ctrl+opt+shift+f",
   "floatingApps" : [
     {
-      "name" : "Obsidian",
       "bundleIdentifier" : "md.obsidian",
-      "iconPath" : "\/Applications\/Obsidian.app\/Contents\/Resources\/icon.icns"
+      "iconPath" : "/Applications/Obsidian.app/Contents/Resources/icon.icns",
+      "name" : "Obsidian"
     },
     {
-      "name" : "Ghostty",
       "bundleIdentifier" : "com.mitchellh.ghostty",
-      "iconPath" : "\/Applications\/Ghostty.app\/Contents\/Resources\/AppIcon.icns"
+      "iconPath" : "/Applications/Ghostty.app/Contents/Resources/AppIcon.icns",
+      "name" : "Ghostty"
     },
     {
-      "name" : "zoom.us",
       "bundleIdentifier" : "us.zoom.xos",
-      "iconPath" : "\/Applications\/zoom.us.app\/Contents\/Resources\/ZPLogo.icns"
+      "iconPath" : "/Applications/zoom.us.app/Contents/Resources/ZPLogo.icns",
+      "name" : "zoom.us"
     }
   ],
-  "floatTheFocusedApp" : {
-    "keyCode" : 3,
-    "modifiers" : 1966080
-  },
-  "enableFocusManagement" : true,
-  "focusLeft" : {
-    "modifiers" : 1966080,
-    "keyCode" : 123
-  },
-  "centerCursorOnFocusChange" : false,
-  "enableSpaceControl" : true,
-  "showMenuBarTitle" : true,
+  "focusNextWorkspaceWindow" : "cmd+ctrl+opt+shift+space",
+  "menuBarDisplayAliases" : "",
   "menuBarTitleTemplate" : "$WORKSPACE",
-  "checkForUpdatesAutomatically" : false
+  "runScriptOnLaunch" : "",
+  "runScriptOnProfileChange" : "",
+  "runScriptOnWorkspaceChange" : "",
+  "showFloatingNotifications" : true,
+  "showMenuBarTitle" : true,
+  "showSpaceControl" : "cmd+ctrl+opt+shift+a",
+  "spaceControlCurrentDisplayWorkspaces" : false,
+  "spaceControlMaxColumns" : 6,
+  "switchToNextWorkspace" : "cmd+ctrl+opt+shift+s",
+  "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+r",
+  "switchToRecentWorkspace" : "cmd+ctrl+opt+shift+t",
+  "unfloatTheFocusedApp" : "cmd+ctrl+opt+shift+p"
 }
