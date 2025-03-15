@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "jesseduffield/lazygit"
+tap "jesseduffield/lazydocker"
 tap "nikitabobko/tap"
 brew "bat"
 brew "deno"
