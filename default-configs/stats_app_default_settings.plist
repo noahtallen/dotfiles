@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Battery_barChart_position</key>
+	<integer>2</integer>
+	<key>Battery_batteryDetails_position</key>
+	<integer>3</integer>
+	<key>Battery_battery_position</key>
+	<integer>0</integer>
+	<key>Battery_label_position</key>
+	<integer>1</integer>
+	<key>Battery_mini_position</key>
+	<integer>4</integer>
+	<key>Battery_widget</key>
+	<string>battery</string>
+	<key>Bluetooth_label_position</key>
+	<integer>1</integer>
+	<key>Bluetooth_stack_position</key>
+	<integer>0</integer>
+	<key>Bluetooth_widget</key>
+	<string></string>
+	<key>CPU_barChart_position</key>
+	<integer>3</integer>
+	<key>CPU_label_position</key>
+	<integer>1</integer>
+	<key>CPU_lineChart_position</key>
+	<integer>2</integer>
+	<key>CPU_mini_position</key>
+	<integer>0</integer>
+	<key>CPU_pieChart_position</key>
+	<integer>4</integer>
+	<key>CPU_tachometer_position</key>
+	<integer>5</integer>
+	<key>CPU_widget</key>
+	<string>mini</string>
+	<key>Clock_label_position</key>
+	<integer>0</integer>
+	<key>Clock_stack_position</key>
+	<integer>1</integer>
+	<key>Clock_state</key>
+	<true/>
+	<key>Clock_widget</key>
+	<string></string>
+	<key>GPU_barChart_position</key>
+	<integer>4</integer>
+	<key>GPU_label_position</key>
+	<integer>1</integer>
+	<key>GPU_lineChart_position</key>
+	<integer>3</integer>
+	<key>GPU_mini_position</key>
+	<integer>2</integer>
+	<key>GPU_state</key>
+	<true/>
+	<key>GPU_tachometer_position</key>
+	<integer>0</integer>
+	<key>GPU_widget</key>
+	<string></string>
+	<key>LaunchAtLoginNext</key>
+	<true/>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{800, 448}</string>
+	<key>NSNavPanelExpandedStateForSaveMode</key>
+	<true/>
+	<key>NSStatusItem Preferred Position Battery_battery</key>
+	<real>205</real>
+	<key>NSStatusItem Preferred Position CPU_mini</key>
+	<real>488</real>
+	<key>NSStatusItem Preferred Position Disk_mini</key>
+	<real>394</real>
+	<key>NSStatusItem Preferred Position Network_speed</key>
+	<real>323</real>
+	<key>NSStatusItem Preferred Position RAM_mini</key>
+	<real>441</real>
+	<key>NSStatusItem Restore Position GPU_mini</key>
+	<integer>762</integer>
+	<key>NSStatusItem Restore Position Sensors_mini</key>
+	<integer>715</integer>
+	<key>NSToolbar Configuration eu.exelban.Stats.Settings.Toolbar</key>
+	<dict>
+		<key>TB Display Mode</key>
+		<integer>1</integer>
+		<key>TB Icon Size Mode</key>
+		<integer>1</integer>
+		<key>TB Is Shown</key>
+		<true/>
+		<key>TB Size Mode</key>
+		<integer>1</integer>
+	</dict>
+	<key>NSWindow Frame NSNavPanelAutosaveName</key>
+	<string>1104 843 800 448 0 0 3008 1667 </string>
+	<key>Network_label_position</key>
+	<integer>2</integer>
+	<key>Network_networkChart_position</key>
+	<integer>4</integer>
+	<key>Network_speed_downloadColor</key>
+	<string>teal</string>
+	<key>Network_speed_icon</key>
+	<string>arrows</string>
+	<key>Network_speed_iconColor</key>
+	<string>default</string>
+	<key>Network_speed_position</key>
+	<integer>0</integer>
+	<key>Network_speed_uploadColor</key>
+	<string>secondOrange</string>
+	<key>Network_speed_valueColor</key>
+	<string>none</string>
+	<key>Network_state_position</key>
+	<integer>3</integer>
+	<key>Network_text_position</key>
+	<integer>1</integer>
+	<key>Network_widget</key>
+	<string>speed</string>
+	<key>Sensors_barChart_position</key>
+	<integer>3</integer>
+	<key>Sensors_label_position</key>
+	<integer>1</integer>
+	<key>Sensors_mini_position</key>
+	<integer>0</integer>
+	<key>Sensors_stack_position</key>
+	<integer>2</integer>
+	<key>Sensors_state</key>
+	<true/>
+	<key>Sensors_widget</key>
+	<string></string>
+	<key>runAtLoginInitialized</key>
+	<true/>
+	<key>setupProcess</key>
+	<true/>
+	<key>support_ts</key>
+	<integer>1741319590</integer>
+	<key>telemetry</key>
+	<false/>
+	<key>telemetry_id</key>
+	<string>6AC5221C-0BF0-44A4-9795-B274198FB1A8</string>
+	<key>updater_check_ts</key>
+	<integer>1742012117</integer>
+	<key>version</key>
+	<string>2.11.34</string>
+</dict>
+</plist>
