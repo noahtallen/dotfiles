@@ -8,7 +8,6 @@
   "enablePictureInPictureSupport" : true,
   "enableSpaceControl" : true,
   "enableSpaceControlAnimations" : false,
-  "floatTheFocusedApp" : "cmd+ctrl+opt+shift+f",
   "floatingApps" : [
     {
       "bundleIdentifier" : "md.obsidian",
@@ -40,5 +39,6 @@
   "switchToNextWorkspace" : "cmd+ctrl+opt+shift+s",
   "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+r",
   "switchToRecentWorkspace" : "cmd+ctrl+opt+shift+t",
-  "unfloatTheFocusedApp" : "cmd+ctrl+opt+shift+p"
+  "toggleFocusedAppAssignment" : "cmd+ctrl+opt+shift+p",
+  "toggleTheFocusedAppFloating" : "cmd+ctrl+opt+shift+f"
 }
