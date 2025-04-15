@@ -1,10 +1,7 @@
 # Environment
-export AWS_PROFILE="dev-publish-only"
-export AWS_DEFAULT_REGION="us-east-1"
-export AWS_REGION="$AWS_DEFAULT_REGION"
-export AWS_SDK_LOAD_CONFIG=1
 export NODE_OPTIONS=--max-old-space-size=16000
 export FNM_COREPACK_ENABLED=true
+
 # Run brew autoupdate every 7 days
 export HOMEBREW_AUTO_UPDATE_SECS=604800
 export HOMEBREW_NO_ENV_HINTS=true

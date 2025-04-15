@@ -19,8 +19,9 @@ stow ssh --target="$HOME"
 stow gnupg --target="$HOME"
 stow config --target="$HOME"
 
-echo -e "\nInstalling fish..."
-fish ./fish-setup.fish
+# No fish for now...
+# echo -e "\nInstalling fish..."
+# fish ./fish-setup.fish
 
 echo -e "\nChecking OMZ..."
 if ! [ -d ~/.oh-my-zsh ]; then
@@ -29,11 +30,19 @@ fi
 
 echo -e "\nChecking zsh plugins..."
 z_plugins=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
+z_themes=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
 if ! [ -d "$z_plugins/zsh-bat" ]; then
-  git clone https://github.com/fdellwing/zsh-bat.git "$z_plugins/zsh-bat"
+  git clone https://github.com/fdellwing/zsh-bat.git "$z_plugins/zsh-bat" --depth=1
 fi
 if ! [ -d "$z_plugins/fzf-tab" ]; then
-  git clone https://github.com/Aloxaf/fzf-tab "$z_plugins/fzf-tab"
+  git clone https://github.com/Aloxaf/fzf-tab "$z_plugins/fzf-tab" --depth=1
+fi
+if ! [ -d "$z_plugins/terraform" ]; then
+  git clone git clone https://github.com/macunha1/zsh-terraform "$z_plugins/terraform"
+fi
+if ! [ -d "$z_themes/spaceship-prompt" ]; then
+    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$z_themes/spaceship-prompt" --depth=1
+    ln -s "$z_themes/spaceship-prompt/spaceship.zsh-theme" "$z_themes/spaceship.zsh-theme"
 fi
 
 # Add fonts -- symlinks don't work for this

@@ -2,12 +2,12 @@
 
 # Set default shell:
 set needs_restart false
-if ! cat /etc/shells | grep -q fish
-    echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-    chsh -s /opt/homebrew/bin/fish
+# if ! cat /etc/shells | grep -q fish
+#     echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+#     chsh -s /opt/homebrew/bin/fish
 
-    set needs_restart true
-end
+#     set needs_restart true
+# end
 
 # Add plugin manager:
 if ! type -q fisher
