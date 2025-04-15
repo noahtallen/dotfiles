@@ -1,4 +1,5 @@
 {
+  "alternativeDisplays" : "",
   "centerCursorOnFocusChange" : false,
   "centerCursorOnWorkspaceChange" : false,
   "changeWorkspaceOnAppAssign" : true,
@@ -8,6 +9,8 @@
   "enablePictureInPictureSupport" : true,
   "enableSpaceControl" : true,
   "enableSpaceControlAnimations" : false,
+  "enableSwipeGestures" : false,
+  "enableWorkspaceTransitions" : false,
   "floatingApps" : [
     {
       "bundleIdentifier" : "md.obsidian",
@@ -25,20 +28,36 @@
       "name" : "zoom.us"
     }
   ],
+  "focusFrontmostWindow" : false,
   "focusNextWorkspaceWindow" : "cmd+ctrl+opt+shift+space",
   "menuBarDisplayAliases" : "",
   "menuBarTitleTemplate" : "$WORKSPACE",
+  "pipApps" : [
+
+  ],
   "runScriptOnLaunch" : "",
   "runScriptOnProfileChange" : "",
   "runScriptOnWorkspaceChange" : "",
   "showFloatingNotifications" : true,
   "showMenuBarTitle" : true,
   "showSpaceControl" : "cmd+ctrl+opt+shift+a",
+  "skipEmptyWorkspacesOnSwitch" : false,
   "spaceControlCurrentDisplayWorkspaces" : false,
   "spaceControlMaxColumns" : 6,
+  "swipeDown3FingerAction" : "none",
+  "swipeDown4FingerAction" : "none",
+  "swipeLeft3FingerAction" : "previousWorkspace",
+  "swipeLeft4FingerAction" : "none",
+  "swipeRight3FingerAction" : "nextWorkspace",
+  "swipeRight4FingerAction" : "none",
+  "swipeThreshold" : 0.2,
+  "swipeUp3FingerAction" : "none",
+  "swipeUp4FingerAction" : "none",
   "switchToNextWorkspace" : "cmd+ctrl+opt+shift+s",
   "switchToPreviousWorkspace" : "cmd+ctrl+opt+shift+r",
   "switchToRecentWorkspace" : "cmd+ctrl+opt+shift+t",
   "toggleFocusedAppAssignment" : "cmd+ctrl+opt+shift+p",
-  "toggleTheFocusedAppFloating" : "cmd+ctrl+opt+shift+f"
+  "toggleTheFocusedAppFloating" : "cmd+ctrl+opt+shift+f",
+  "workspaceTransitionDimming" : 0.2,
+  "workspaceTransitionDuration" : 0.3
 }
