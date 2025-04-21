@@ -9,9 +9,22 @@
 	pushf = push --force-with-lease
 	ca = commit -a -m
 	bn = rev-parse --abbrev-ref HEAD
-	b = !git checkout -b $1 && git push -u origin
 	l = log --oneline
 	co = checkout
+	# Checkout the default branch:
+	sm = !git switch $(git mb)
+	# Fast git switch to previous branch:
+	s = switch -
+	# Get the default branch name:
+	mb = !basename $(git symbolic-ref --short refs/remotes/origin/HEAD)
+	# Get the current branch name:
+	cb = rev-parse --abbrev-ref HEAD
+	# Whether we're on the default branch:
+	ismb = ![[ "$(git mb)" = "$(git cb)" ]]
+	# Fetch default branch changes locally -- if on default branch, just pull.
+	fchmb = !"if git ismb ; then git pull ; else git fetch origin $(git mb):$(git mb) ; fi"
+	# Create a new branch starting from latest main branch
+	b = !git fchmb && git switch -c $1 $(git mb) && git push -u origin
 	# ATTENTION: All aliases prefixed with ! run in /bin/sh make sure you use sh syntax, not bash/zsh or whatever
 	branches = "!r() { count=$1; git for-each-ref --sort=-committerdate refs/heads --format='%(HEAD)%(color:yellow)%(refname:short)|%(color:bold green)%(committerdate:relative)|%(color:blue)%(subject)|%(color:magenta)%(authorname)%(color:reset)' --color=always --count=${count:=10} | column -ts'|';}; r"
 
@@ -19,20 +32,20 @@
 	defaultBranch = trunk
 
 [rerere]
-    enabled = true
+	enabled = true
 
 [diff]
-    tool = difftastic
+	tool = difftastic
 	external = difft
 
 [difftool]
-    prompt = false
+	prompt = false
 
 [difftool "difftastic"]
-    cmd = difft "$LOCAL" "$REMOTE"
+	cmd = difft "$LOCAL" "$REMOTE"
 
 [pager]
-    difftool = true
+	difftool = true
 
 # For some reason, git config --global doesn't read this if it's in an included local config file,
 # so just include it here. Try not to commit it :P
@@ -41,8 +54,8 @@
 
 # Work repos
 [includeIf "hasconfig:remote.*.url:git@github.com:webflow/**"]
-    path = ~/.gitconfig-webflow
+	path = ~/.gitconfig-webflow
 
 [include]
 # Store local-only stuff here, like the signingkey
-    path = ~/.gitconfig-local
+	path = ~/.gitconfig-local
