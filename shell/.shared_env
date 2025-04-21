@@ -25,7 +25,8 @@ alias lg='lazygit'
 alias ld='lazydocker'
 alias p='pnpm'
 alias cat='bat'
-
+alias ts='date +%s'
+alias tsh='date +"%Y-%m-%d-%k-%M"'
 # Git
 alias prc="git push -u origin HEAD && gh pr create --web"
 alias repo="gh repo view --web"
