@@ -17,6 +17,8 @@
 	s = switch -
 	# Get the default branch name:
 	mb = !basename $(git symbolic-ref --short refs/remotes/origin/HEAD)
+	# Merge in the main branch:
+	mm = !"if git ismb; then git fchmb; else git fchmb && git merge $(git mb); fi"
 	# Get the current branch name:
 	cb = rev-parse --abbrev-ref HEAD
 	# Whether we're on the default branch:
