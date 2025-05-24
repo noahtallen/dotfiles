@@ -22,6 +22,7 @@ stow config --target="$HOME"
 # No fish for now...
 # echo -e "\nInstalling fish..."
 # fish ./fish-setup.fish
+chsh -s /bin/zsh
 
 echo -e "\nChecking OMZ..."
 if ! [ -d ~/.oh-my-zsh ]; then
@@ -38,7 +39,7 @@ if ! [ -d "$z_plugins/fzf-tab" ]; then
   git clone https://github.com/Aloxaf/fzf-tab "$z_plugins/fzf-tab" --depth=1
 fi
 if ! [ -d "$z_plugins/terraform" ]; then
-  git clone git clone https://github.com/macunha1/zsh-terraform "$z_plugins/terraform"
+  git clone https://github.com/macunha1/zsh-terraform "$z_plugins/terraform"
 fi
 if ! [ -d "$z_themes/spaceship-prompt" ]; then
     git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$z_themes/spaceship-prompt" --depth=1
