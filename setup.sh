@@ -22,7 +22,9 @@ stow config --target="$HOME"
 # No fish for now...
 # echo -e "\nInstalling fish..."
 # fish ./fish-setup.fish
-chsh -s /bin/zsh
+if [ "$SHELL" != /bin/zsh ]; then
+    chsh -s /bin/zsh
+fi
 
 echo -e "\nChecking OMZ..."
 if ! [ -d ~/.oh-my-zsh ]; then
