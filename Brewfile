@@ -29,6 +29,8 @@ brew "zoxide"
 brew "zsh-syntax-highlighting"
 brew "jesseduffield/lazydocker/lazydocker"
 brew "jesseduffield/lazygit/lazygit"
+brew "coreutils"
+brew "bash"
 
 cask "flashspace"
 cask "ghostty"

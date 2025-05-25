@@ -11,7 +11,7 @@
     "disabled_globs": ["./config/**"],
     "mode": "eager"
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o"
@@ -35,5 +35,24 @@
   },
   "file_types": {
     "Shell Script": [".shared_env", "*.conf", "*rc", "config"]
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
+    }
   }
 }
