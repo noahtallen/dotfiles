@@ -40,7 +40,7 @@ stow_adopt config
 # fish ./fish-setup.fish
 if ! which chsh ; then
     # using system like universal blue which uses usermods instead:
-    sudo usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh ${USER}
+    # sudo usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh ${USER}
 elif [ "$SHELL" != /bin/zsh ] ; then
     chsh -s /bin/zsh
 fi

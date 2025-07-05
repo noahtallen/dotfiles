@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+source "$HOME/.shared_env"
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -10,11 +11,12 @@ plugins=(git zsh-bat nvm fzf-tab terraform aws)
 # Lazy load nvm so it doesn't happen on every new termianl
 zstyle ':omz:plugins:nvm' lazy yes
 
+brew_dir=$(brew --prefix)
+
 source $ZSH/oh-my-zsh.sh
-fpath+="/opt/homebrew/share/zsh/site-functions"
+fpath+="$brew_dir/share/zshc/site-functions"
 
 # Shared aliases and path options
-source "$HOME/.shared_env"
 
 # fnm (faster nvm)
 eval "$(fnm env --use-on-cd)"
@@ -45,4 +47,4 @@ _fzf_comprun() {
 source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 alias cd="z"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "$brew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
