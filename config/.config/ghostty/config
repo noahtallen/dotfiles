@@ -1,3 +1,5 @@
+command=/home/linuxbrew/.linuxbrew/bin/zsh
+
 font-family = Cascadia Code NF
 font-size = 16
 # Kinda like line height:
