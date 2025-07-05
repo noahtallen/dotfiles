@@ -41,6 +41,10 @@ alias ydup="yarn && npx yarn-deduplicate && yarn"
 alias npmscripts="cat package.json | jq .scripts"
 alias dcm="docker-compose"
 
+if ! which zed &> /dev/null && [ $(uname) = "Linux" ]; then
+    alias zed="flatpak run dev.zed.Zed"
+fi
+
 # Python
 alias py="python3"
 
