@@ -9,20 +9,39 @@ else
 fi
 
 echo -e "\nChecking brew programs"
-brew bundle install
+brew bundle install --file ./Brewfile
+
+if [ "$(uname)" == "Darwin" ] ; then
+    brew bundle install --file ./Brewfile-maconly
+fi
+
+function stow_adopt {
+    source_dir="$1"
+    if ! stow config --target="$HOME" ; then
+        read -p "Symlinking $1 failed, try stow with --adopt? (y/n) " -n 1 -r
+        echo    # (optional) move to a new line
+        if [[ $REPLY =~ ^[Yy]$ ]]
+        then
+            stow config --adopt --target="$HOME"
+        fi
+    fi
+}
 
 # symlink configurations: (fails if there are existing files, but if you do stow --adopt, it will link with the existing contents, letting you see the differences via git.)
 echo -e "\nSymlinking configs..."
-stow shell --target="$HOME"
-stow git --target="$HOME"
-stow ssh --target="$HOME"
-stow gnupg --target="$HOME"
-stow config --target="$HOME"
+stow_adopt shell
+stow_adopt git
+stow_adopt ssh
+stow_adopt gnupg
+stow_adopt config
 
 # No fish for now...
 # echo -e "\nInstalling fish..."
 # fish ./fish-setup.fish
-if [ "$SHELL" != /bin/zsh ]; then
+if ! which chsh ; then
+    # using system like universal blue which uses usermods instead:
+    sudo usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh ${USER}
+elif [ "$SHELL" != /bin/zsh ] ; then
     chsh -s /bin/zsh
 fi
 
@@ -47,10 +66,6 @@ if ! [ -d "$z_themes/spaceship-prompt" ]; then
     git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$z_themes/spaceship-prompt" --depth=1
     ln -s "$z_themes/spaceship-prompt/spaceship.zsh-theme" "$z_themes/spaceship.zsh-theme"
 fi
-
-# Add fonts -- symlinks don't work for this
-echo -e "\nCopying fonts..."
-cp -rf ./fonts/ ~/Library/Fonts/
 
 # macOS options, see https://macos-defaults.com/
 # use "defaults delete $domain $setting" to reset values. -g uses NSGlobalDomain for $domain
@@ -89,4 +104,8 @@ if [ "$(uname)" == "Darwin" ] && [ "$os_setting" != 1 ]; then
 
     killall Finder
     killall Dock
+
+    # Add fonts -- symlinks don't work for this. Currently only for mac, in Linux we put them in blue build.
+    echo -e "\nCopying fonts..."
+    cp -rf ./fonts/ ~/Library/Fonts/
 fi

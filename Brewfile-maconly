@@ -1,0 +1,11 @@
+tap "homebrew/bundle"
+brew "pinentry-mac"
+brew "gnupg"
+brew "coreutils"
+brew "bash"
+
+cask "flashspace"
+cask "ghostty"
+cask "iterm2"
+cask "kitty"
+cask "stats"
