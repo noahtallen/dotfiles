@@ -32,7 +32,10 @@ alias cat='bat'
 alias ts='date +%s'
 alias tsh='date +"%Y-%m-%d-%k-%M"'
 # Git
-alias prc="git push -u origin HEAD && gh pr create --web"
+prc() {
+    git push -u origin HEAD
+    gh pr create --web
+}
 alias repo="gh repo view --web"
 alias rbt="git checkout trunk && git pull && git checkout - && git rebase trunk"
 alias gcl='git reset . && git checkout -- . && git clean -fd .'
@@ -53,4 +56,6 @@ alias py="python3"
 alias dad_joke='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
 alias dadj='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
 
+# Claude history
+alias chist='jq --arg dir "$(pwd)" -r ".projects[\$dir].history[]? | .display + \"\n\"" ~/.claude.json | tac 2>/dev/null || echo "no claude history found for current directory"'
 test -f ~/.local_env && source ~/.local_env

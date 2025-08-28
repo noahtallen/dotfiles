@@ -15,8 +15,7 @@
     "default_model": {
       "provider": "copilot_chat",
       "model": "gpt-4o"
-    },
-    "version": "2"
+    }
   },
   "features": {
     "edit_prediction_provider": "zed"
@@ -36,10 +35,40 @@
   "file_types": {
     "Shell Script": [".shared_env", "*.conf", "*rc", "config"]
   },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          "showSyntaxErrors": true
+        }
+      }
+    }
+  },
+  "experimental.theme_overrides": {
+    "editor.invisible": "#333333"
+  },
   "languages": {
+    "Terraform": {
+      "format_on_save": "off"
+    },
+    "Dockerfile": {
+      "format_on_save": "off"
+    },
+    "TypeScript": {
+      "formatter": {
+        "external": {
+          "command": "node_modules/.bin/prettier",
+          "arguments": [
+            "--config",
+            ".prettierrc",
+            "--stdin-filepath",
+            "{buffer_path}"
+          ]
+        }
+      }
+    },
     "Python": {
-      "language_servers": ["ruff"],
-      "format_on_save": "on",
+      "language_servers": ["ruff", "pyright"],
       "formatter": [
         {
           "code_actions": {

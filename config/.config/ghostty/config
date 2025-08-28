@@ -4,6 +4,7 @@ font-size = 16
 adjust-cell-height = 8
 theme = custom_kitty.config
 adjust-cursor-thickness = 200%
+keybind = shift+enter=text:\NF
 
 # Background Blur:
 # background-opacity = 0.9
