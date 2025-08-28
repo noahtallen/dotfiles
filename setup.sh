@@ -17,12 +17,12 @@ fi
 
 function stow_adopt {
     source_dir="$1"
-    if ! stow config --target="$HOME" ; then
+    if ! stow "$source_dir" --target="$HOME" ; then
         read -p "Symlinking $1 failed, try stow with --adopt? (y/n) " -n 1 -r
         echo    # (optional) move to a new line
         if [[ $REPLY =~ ^[Yy]$ ]]
         then
-            stow config --adopt --target="$HOME"
+            stow "$source_dir" --adopt --target="$HOME"
         fi
     fi
 }
@@ -39,9 +39,10 @@ stow_adopt config
 # echo -e "\nInstalling fish..."
 # fish ./fish-setup.fish
 if ! which chsh ; then
+    echo "hmm"
     # using system like universal blue which uses usermods instead:
     # sudo usermod --shell /home/linuxbrew/.linuxbrew/bin/zsh ${USER}
-elif [ "$SHELL" != /bin/zsh ] ; then
+elif [ "$SHELL" != "/bin/zsh" ] ; then
     chsh -s /bin/zsh
 fi
 
