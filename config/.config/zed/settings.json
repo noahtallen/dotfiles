@@ -21,6 +21,7 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
+  "show_whitespaces": "all",
   "buffer_font_family": "Cascadia Code NF",
   "ui_font_size": 16,
   "buffer_font_size": 15,
