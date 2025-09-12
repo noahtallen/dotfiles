@@ -50,6 +50,10 @@
     "editor.invisible": "#333333"
   },
   "languages": {
+    "Shell Script": {
+      "tab_size": 2,
+      "hard_tabs": false
+    },
     "Terraform": {
       "format_on_save": "off"
     },

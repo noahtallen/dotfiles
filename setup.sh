@@ -46,28 +46,6 @@ elif [ "$SHELL" != "/bin/zsh" ] ; then
     chsh -s /bin/zsh
 fi
 
-echo -e "\nChecking OMZ..."
-if ! [ -d ~/.oh-my-zsh ]; then
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
-fi
-
-echo -e "\nChecking zsh plugins..."
-z_plugins=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins
-z_themes=${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes
-if ! [ -d "$z_plugins/zsh-bat" ]; then
-  git clone https://github.com/fdellwing/zsh-bat.git "$z_plugins/zsh-bat" --depth=1
-fi
-if ! [ -d "$z_plugins/fzf-tab" ]; then
-  git clone https://github.com/Aloxaf/fzf-tab "$z_plugins/fzf-tab" --depth=1
-fi
-if ! [ -d "$z_plugins/terraform" ]; then
-  git clone https://github.com/macunha1/zsh-terraform "$z_plugins/terraform"
-fi
-if ! [ -d "$z_themes/spaceship-prompt" ]; then
-    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$z_themes/spaceship-prompt" --depth=1
-    ln -s "$z_themes/spaceship-prompt/spaceship.zsh-theme" "$z_themes/spaceship.zsh-theme"
-fi
-
 # macOS options, see https://macos-defaults.com/
 # use "defaults delete $domain $setting" to reset values. -g uses NSGlobalDomain for $domain
 # Only configure sometimes -- change the os_setting check when a new variable is added so that

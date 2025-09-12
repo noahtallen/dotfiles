@@ -1,105 +1,53 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# shard_env contains aliases, env vars, path, etc. Shared among shells.
 source "$HOME/.shared_env"
-
-# Path to your Oh My Zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="spaceship"
-
-plugins=(git zsh-bat fzf-tab terraform aws)
-setopt HIST_SAVE_NO_DUPS # Do not write a duplicate event to the history file.
-# Lazy load nvm so it doesn't happen on every new termianl
-# zstyle ':omz:plugins:nvm' lazy yes
-
 brew_dir=$(brew --prefix)
 
-source $ZSH/oh-my-zsh.sh
-fpath+="$brew_dir/share/zshc/site-functions"
+### zsh history settings
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=100000
 
-# Shared aliases and path options
+setopt HIST_SAVE_NO_DUPS
+setopt INC_APPEND_HISTORY
 
-# fnm (faster nvm)
-eval "$(fnm env --use-on-cd --shell zsh)"
+### zsh keybindings
+bindkey -e
+# Use the up and down keys to navigate the history
+bindkey "\e[A" history-beginning-search-backward
+bindkey "\e[B" history-beginning-search-forward
 
-# autocorrect commands:
-eval $(thefuck --alias)
+### zsh settings
+setopt autocd
 
-# Pure Prompt for zsh (using spaceship now)
-# PURE_PROMPT_SYMBOL="$"
-# autoload -U promptinit; promptinit
-# zstyle :prompt:pure:git:stash show yes
-# prompt pure
-
-# Various CLI tools that need initialization & zsh integration
-export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute-silent(echo -n {1..} | pbcopy)+abort'"
+### fzf options
+export FZF_DEFAULT_OPTS="--bind 'ctrl-y:execute-silent(echo -n {1..} | pbcopy)+abort'" # ctrl-y copies to clipboard
 export FZF_CTRL_R_OPTS="--bind 'ctrl-y:execute-silent(echo -n {2..} | pbcopy)+abort'"
-
+export FZF_COMPLETION_TRIGGER='**' # .. followed by tab opens autocomplete
 _fzf_comprun() {
   local command=$1
   shift
-
   case "$command" in
-    cd)           fzf "$@" --preview 'tree -C {} | head -200' ;;
-    *)            fzf "$@" ;;
+    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
   esac
 }
 
-source <(fzf --zsh)
-eval "$(zoxide init zsh)"
-alias cd="z"
-source "$brew_dir/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+### Plugins which don't work with antidote
+source <(fzf --zsh)                       # Fancy auto-complete
+eval "$(fnm env --use-on-cd --shell zsh)" # Node version manager (faster than nvm)
 
-export WF_DOCKER_REGISTRY="731837323691.dkr.ecr.us-east-1.amazonaws.com"
-# AWS shit:
-export AWS_PROFILE="ci"
-export AWS_DEFAULT_REGION="us-east-1"
-export AWS_REGION="$AWS_DEFAULT_REGION"
-export AWS_SDK_LOAD_CONFIG=1
+### Antitode plugins
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+zsh_plugins=~/.zsh_plugins
+fpath=("$brew_dir/opt/antidote/share/antidote/functions" $fpath) # Lazy-load antidote from its functions directory.
+autoload -Uz antidote
 
-alias awslogin='AWS_PROFILE=ci aws sts get-caller-identity >/dev/null 2>&1 || aws sso login --sso-session wf-session &>/dev/null && AWS_CONFIG_FILE="$HOME/.aws/config" yawsso'
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
 
-alias ecrlogin_ci="AWS_PROFILE=ci aws ecr get-login-password --region us-east-1 | docker login --username AWS
---password-stdin 731837323691.dkr.ecr.us-east-1.amazonaws.com"
-
-alias ecrlogin_dev="AWS_PROFILE=dev-publish-only aws ecr get-login-password region us-east-1 | docker login --username AWS
---password-stdin 024376647576.dkr.ecr.us-east-1.amazonaws.com"
-
-function ecrlogin {
-    ecrlogin_ci
-    ecrlogin_dev
-}
-
-function bk_annotations {
-    curl -H "Authorization: Bearer $BUILDKITE_API_TOKEN" \
-        -X GET "https://api.buildkite.com/v2/organizations/webflow/pipelines/${2:-ci-plus-plus}/builds/$1/annotations"
-}
-
-function bk_build {
-    curl -H "Authorization: Bearer $BUILDKITE_API_TOKEN" \
-        -X GET "https://api.buildkite.com/v2/organizations/webflow/pipelines/${2:-ci-plus-plus}/builds/$1"
-}
-
-function bk_job {
-    curl -H "Authorization: Bearer $BUILDKITE_API_TOKEN" \
-        -X GET "https://api.buildkite.com/v2/organizations/webflow/pipelines/${3:-ci-plus-plus}/builds/$1/jobs/$2"
-}
-
-function bk_builds {
-    curl -H "Authorization: Bearer $BUILDKITE_API_TOKEN" \
-        -X GET "https://api.buildkite.com/v2/organizations/webflow/pipelines/${2:-ci-plus-plus}/builds/?$1"
-}
-
-function get_all_mq_builds {
-    bk_builds "branch=gh-readonly-queue*"
-}
-
-function get_mq_builds {
-    bk_builds "branch=gh-readonly-queue*&state=running" | jq -r'[].web_url'
-}
-
-function bk_agents {
-    name_str=$(test $#-gt 0 && echo "?name=$1" || "")
-    curl -H "Authorization: Bearer $BUILDKITE_API_TOKEN" \
-        -X GET "https://api.buildkite.com/v2/organizations/webflow/agents$name_str"
-}
+# Source your static plugins file.
+source ${zsh_plugins}.zsh
