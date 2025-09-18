@@ -1,0 +1,18 @@
+# function to set AWS profile, sso login and clear the profile
+function awsp() {
+  available_profiles=$(aws_profiles)
+  if [[ -z "$1" ]]; then
+    unset AWS_DEFAULT_PROFILE AWS_PROFILE
+    echo "Zero argument provided, AWS profile cleared."
+    return
+  fi
+
+  echo "$available_profiles" | grep -qw "$1"
+  if [[ $? -ne 0 ]]; then
+    echo "Profile '$1' not configured in '$HOME/.aws/config'.\n"
+    echo "Available profiles: \n$available_profiles\n"
+    return 1
+  else
+    export AWS_DEFAULT_PROFILE="$1" AWS_PROFILE="$1"
+  fi
+}

@@ -1,0 +1,10 @@
+# function to set AWS region and clear the region
+function awsr() {
+  if [[ -z "$1" ]]; then
+    unset AWS_DEFAULT_REGION AWS_REGION
+    echo "No argument provided, cleared AWS region."
+    return
+  else
+    export AWS_DEFAULT_REGION=$1 AWS_REGION=$1
+  fi
+}

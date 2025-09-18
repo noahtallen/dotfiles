@@ -1,4 +1,4 @@
-
+mattmc3/zfunctions
 Aloxaf/fzf-tab kind:defer
 spaceship-prompt/spaceship-prompt
 
