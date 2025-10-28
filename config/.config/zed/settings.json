@@ -25,11 +25,7 @@
   "buffer_font_family": "Cascadia Code NF",
   "ui_font_size": 16,
   "buffer_font_size": 15,
-  "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "Catppuccin Espresso (Blur)"
-  },
+  "theme": "Catppuccin Espresso (Blur) [Heavy]",
   "soft_wrap": "editor_width",
   "buffer_font_features": {
     "calt": false
@@ -76,12 +72,8 @@
     "Python": {
       "language_servers": ["ruff", "pyright"],
       "formatter": [
-        {
-          "code_actions": {
-            "source.organizeImports.ruff": true,
-            "source.fixAll.ruff": true
-          }
-        },
+        { "code_action": "source.organizeImports.ruff" },
+        { "code_action": "source.fixAll.ruff" },
         {
           "language_server": {
             "name": "ruff"
