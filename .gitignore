@@ -5,4 +5,6 @@ shell/.config/fish
 # Allow only certain items from zed
 config/.config/zed/*
 !config/.config/zed/settings.json
+!config/.config/zed/tasks.json
+!config/.config/zed/keymap.json
 !config/.config/zed/themes

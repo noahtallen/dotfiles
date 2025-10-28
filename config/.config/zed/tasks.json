@@ -12,6 +12,6 @@
   {
     "label": "Create pull request",
     "command": "prc",
-    "hide": "always"
+    "hide": "on_success"
   }
 ]

@@ -1,0 +1,56 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "bindings": {
+      "cmd-shift-g": [
+        "task::Spawn",
+        {
+          "task_name": "Open lazygit",
+          "target": "center"
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+    }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      // "j k": ["workspace::SendKeystrokes", "escape"]
+    }
+  },
+  {
+    "context": "(Editor && mode == full)",
+    "bindings": {
+      "cmd-shift-c": "editor::CopyPermalinkToLine"
+    }
+  },
+  {
+    "context": "(ProjectPanel || Editor)",
+    "bindings": {
+      "cmd-shift-r": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "(OutlinePanel && not_editing)",
+    "bindings": {
+      "cmd-shift-r": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "(Workspace && !Terminal)",
+    "bindings": {
+      "cmd-shift-t": "task::Spawn"
+    }
+  }
+]
