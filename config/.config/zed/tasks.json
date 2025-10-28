@@ -1,0 +1,17 @@
+// Project tasks configuration. See https://zed.dev/docs/tasks for documentation.
+//
+// Example:
+[
+  {
+    "label": "Open lazygit",
+    "command": "lazygit",
+    "working_directory": "${ZED_WORKTREE_ROOT}",
+    "hide": "on_success",
+    "allow_concurrent_runs": false
+  },
+  {
+    "label": "Create pull request",
+    "command": "prc",
+    "hide": "always"
+  }
+]
