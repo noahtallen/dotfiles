@@ -63,6 +63,9 @@ if [ "$(uname)" == "Darwin" ] && [ "$os_setting" != 1 ]; then
     defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
     defaults write -g AppleShowAllExtensions -bool true
 
+    # Set default text app to Zed
+    defaults write com.apple.LaunchServices/com.apple.launchservices.secure LSHandlers -array-add '{LSHandlerContentType=public.plain-text;LSHandlerRoleAll=dev.zed.Zed;}'
+
     # Add three-finger drag:
     defaults write com.apple.AppleMultitouchTrackpad DragLock -bool false
     defaults write com.apple.AppleMultitouchTrackpad Dragging -bool false
