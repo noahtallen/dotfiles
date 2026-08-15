@@ -7,21 +7,33 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "icon_theme": "JetBrains New UI Icons (Dark)",
   "project_panel": {
     "dock": "left"
   },
   "edit_predictions": {
+    "provider": "zed",
     "disabled_globs": ["./config/**"],
     "mode": "eager"
   },
   "agent": {
+    "tool_permissions": {
+      "default": "allow"
+    },
     "default_profile": "ask",
     "default_model": {
       "provider": "amazon-bedrock",
       "model": "claude-sonnet-4-5"
     },
-    "always_allow_tool_actions": true,
     "model_parameters": []
   },
   "language_models": {
@@ -30,9 +42,6 @@
       "region": "us-east-1",
       "profile": "localdev"
     }
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
   },
   "show_whitespaces": "all",
   "buffer_font_family": "Cascadia Code NF",
