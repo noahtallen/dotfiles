@@ -1,10 +1,25 @@
-brew "pinentry-mac"
-brew "gnupg"
-brew "coreutils"
-brew "bash"
 
-cask "flashspace"
+### Apps
 cask "ghostty"
-cask "iterm2"
-cask "kitty"
 cask "stats"
+brew "pinentry-mac" # for yubikey pin entry
+
+# GNU utilities on mac
+brew "coreutils"
+# Bash, obviously
+brew "bash"
+# Command-line option parsing utility
+brew "gnu-getopt"
+# C code prettifier
+brew "gnu-indent"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# GNU grep, egrep and fgrep
+brew "grep"
+brew "gawk"

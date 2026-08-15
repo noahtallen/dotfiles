@@ -1,4 +1,5 @@
 # Source global definitions
+
 if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
@@ -13,4 +14,5 @@ if [ -d ~/.bashrc.d ]; then
 fi
 unset rc
 
+eval "$(mise activate bash)"
 source "$HOME/.shared_env"

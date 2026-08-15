@@ -1,14 +1,19 @@
 # shard_env contains aliases, env vars, path, etc. Shared among shells.
 source "$HOME/.shared_env"
 brew_dir=$(brew --prefix)
+eval "$(mise activate zsh)"
 
 ### zsh history settings
-HISTFILE=~/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-
-setopt HIST_SAVE_NO_DUPS
+# https://github.com/junegunn/fzf/issues/600#issuecomment-714502300
+export HISTFILE=~/.zsh_history
+export HISTFILESIZE=1000000000
+export HISTSIZE=1000000000
 setopt INC_APPEND_HISTORY
+export HISTTIMEFORMAT="[%F %T] "
+setopt EXTENDED_HISTORY
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+
 
 ### zsh keybindings
 bindkey -e
@@ -36,7 +41,6 @@ _fzf_comprun() {
 
 ### Plugins which don't work with antidote
 source <(fzf --zsh)                       # Fancy auto-complete
-eval "$(fnm env --use-on-cd --shell zsh)" # Node version manager (faster than nvm)
 
 ### Antitode plugins
 zstyle ':antidote:bundle' use-friendly-names 'yes'

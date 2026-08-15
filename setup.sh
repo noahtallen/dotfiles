@@ -2,10 +2,12 @@
 set -euo pipefail
 
 function is_mac {
-   "$(uname)" == "Darwin"
+   [ "$(uname)" == "Darwin" ]
 }
 
-curl https://mise.run | sh
+if ! type mise > /dev/null; then
+  curl https://mise.run | sh
+fi
 
 if ! type brew > /dev/null && is_mac; then
     echo "Installing brew..."
