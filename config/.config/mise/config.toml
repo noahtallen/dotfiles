@@ -1,0 +1,7 @@
+[tools]
+jq = "latest"
+yq = "latest"
+lazygit = "latest"
+lazydocker = "latest"
+gh = "latest"
+dive = "latest"
