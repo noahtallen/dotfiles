@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ! type brew > /dev/null ; then
+function is_mac {
+   "$(uname)" == "Darwin"
+}
+
+curl https://mise.run | sh
+
+if ! type brew > /dev/null && is_mac; then
     echo "Installing brew..."
     NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
@@ -11,7 +17,7 @@ fi
 echo -e "\nChecking brew programs"
 brew bundle install --file ./Brewfile
 
-if [ "$(uname)" == "Darwin" ] ; then
+if is_mac ; then
     brew bundle install --file ./Brewfile-maconly
 fi
 
