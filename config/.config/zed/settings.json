@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "agent_servers": {
+
+  },
+  "cli_default_open_behavior": "existing_window",
   "outline_panel": {
     "dock": "left"
   },
@@ -26,22 +30,8 @@
     "mode": "eager"
   },
   "agent": {
-    "tool_permissions": {
-      "default": "allow"
-    },
-    "default_profile": "ask",
-    "default_model": {
-      "provider": "amazon-bedrock",
-      "model": "claude-sonnet-4-5"
-    },
+    "terminal_init_command": "ntp",
     "model_parameters": []
-  },
-  "language_models": {
-    "bedrock": {
-      "authentication_method": "named_profile",
-      "region": "us-east-1",
-      "profile": "localdev"
-    }
   },
   "show_whitespaces": "all",
   "buffer_font_family": "Cascadia Code NF",

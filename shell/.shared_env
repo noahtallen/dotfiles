@@ -63,3 +63,6 @@ alias dadj='curl -H "Accept: text/plain" https://icanhazdadjoke.com/'
 # Claude history
 alias chist='jq --arg dir "$(pwd)" -r ".projects[\$dir].history[]? | .display + \"\n\"" ~/.claude.json | tac 2>/dev/null || echo "no claude history found for current directory"'
 test -f ~/.local_env && source ~/.local_env
+
+# Sandboxed pi
+alias ntp='nono run --profile nt-agent -- pi'

@@ -46,3 +46,4 @@ brew "tree" # for eza?
 brew "navi" # Interactive cheatsheet tool for the command-line
 brew "neofetch" # Fast, highly customisable system info script
 brew "difftastic"
+brew "btop"

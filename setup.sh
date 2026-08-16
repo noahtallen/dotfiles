@@ -42,6 +42,7 @@ stow_adopt git
 stow_adopt ssh
 stow_adopt gnupg
 stow_adopt config
+stow_adopt pi
 
 # No fish for now...
 # echo -e "\nInstalling fish..."

@@ -55,10 +55,20 @@
     "listen_port_range": [],
     "connect_port": [],
     "no_proxy": [],
-    "custom_credentials": {},
     "tls_intercept": null,
     "upstream_proxy": null,
-    "upstream_bypass": []
+    "upstream_bypass": [],
+    "network_profile": "minimal",
+    "credentials": ["opencode"],
+    "custom_credentials": {
+      "opencode": {
+        "upstream": "https://opencode.ai",
+        "inject_header": "Authorization",
+        "credential_format": "Bearer {}",
+        "credential_key": "op://dev/opencode-default/credential",
+        "env_var": "OPENCODE_API_KEY"
+      }
+    }
   },
   "diagnostics": {
     "suppress_system_services": []
