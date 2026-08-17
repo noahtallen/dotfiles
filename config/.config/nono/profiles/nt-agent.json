@@ -21,7 +21,7 @@
   },
   "commands": {
     "allow": [],
-    "deny": []
+    "deny": ["talosctl", "kubectl"]
   },
   "filesystem": {
     "allow": [],
@@ -38,37 +38,56 @@
     "unix_socket_dir_bind": [],
     "unix_socket_subtree": [],
     "unix_socket_subtree_bind": [],
-    "deny": [],
+    "deny": [
+      "$WORKDIR/clusterconfig"
+    ],
     "bypass_protection": [],
     "suppress_save_prompt": [
-      "~/"
+      "~/",
+      "/Users"
     ]
   },
   "network": {
     "block": false,
     "allow_http2": false,
+    "network_profile": "minimal",
     "allow_domain": [],
     "deny_domain": [],
+    "credentials": [
+      "opencode"
+    ],
     "open_port": [],
     "open_port_range": [],
     "listen_port": [],
     "listen_port_range": [],
     "connect_port": [],
     "no_proxy": [],
-    "tls_intercept": null,
-    "upstream_proxy": null,
-    "upstream_bypass": [],
-    "network_profile": "minimal",
-    "credentials": ["opencode"],
     "custom_credentials": {
       "opencode": {
         "upstream": "https://opencode.ai",
+        "credential_key": "op://dev/opencode-default/credential",
+        "auth": null,
+        "inject_mode": "header",
         "inject_header": "Authorization",
         "credential_format": "Bearer {}",
-        "credential_key": "op://dev/opencode-default/credential",
-        "env_var": "OPENCODE_API_KEY"
+        "path_pattern": null,
+        "path_replacement": null,
+        "query_param_name": null,
+        "proxy": null,
+        "env_var": "OPENCODE_API_KEY",
+        "endpoint_rules": [],
+        "endpoint_policy": null,
+        "tls_ca": null,
+        "tls_client_cert": null,
+        "tls_client_key": null,
+        "aws_auth": null,
+        "spiffe": null,
+        "rate_limit": null
       }
-    }
+    },
+    "tls_intercept": null,
+    "upstream_proxy": null,
+    "upstream_bypass": []
   },
   "diagnostics": {
     "suppress_system_services": []
